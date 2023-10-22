@@ -1,0 +1,137 @@
+/* Hoja de estilos para la calculadora de combinaciones y permutaciones */
+
+* {
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    background-image: linear-gradient(to top, darkolivegreen, darkcyan);
+    background-attachment: fixed;
+}
+
+header {
+    background-color: skyblue;
+    border-bottom: 2px solid dodgerblue;
+}
+
+header h1 {
+    margin: auto;
+}
+
+nav.encabezado {
+    display: flex;
+    width: 100%;
+    /*height: 3rem;*/
+    border-top: 1px solid dodgerblue;
+}
+
+nav.encabezado a {
+    display: block;
+    padding: 1em;
+    border-right: 1px solid dodgerblue;
+    text-decoration: none;
+    color: black;
+}
+
+nav.encabezado a:last-child {
+    border-right: none;
+}
+
+nav.encabezado a:not(:not(:hover):not(:focus)) {
+    color: white;
+    background-color: dodgerblue;
+}
+
+section, .contenedor-enlaces {
+    min-height: 70vh;
+    /*margin-bottom: auto;*/
+}
+
+
+
+.contenedor-operacion, .contenedor-enlaces {
+    display: inline-block;
+    /*
+    box-sizing: content-box;
+    width: 40ch;
+    */
+    width: max-content;
+    position: relative;
+    left: 50%;
+    translate: -50% 0;
+    margin: 5px 0;
+    padding: 1em;
+    background-color: lightblue;
+    border-radius: 1em;
+    word-spacing: 0;
+}
+
+.contenedor-operacion * {
+    box-sizing: border-box;
+    word-spacing: unset;
+    word-spacing: revert;
+    max-width: 42ch;
+}
+
+.contenedor-operacion > h3 {
+    margin-top: 0.5em;
+}
+
+input[type="text"] {
+    float: right;
+    width: 14ch;
+}
+
+input[type="button"], input[type="reset"] {
+    display: inline-block;
+    /*padding: 1ch;*/
+    height: calc(1em + 2ch);
+    padding: 0 1ch;
+    border: 1px solid darkcyan;
+    background-color: lightgreen;
+    cursor: pointer;
+}
+
+input:not(
+    :not([type="button"]):not([type="reset"])
+    ):not(:not(:hover):not(:focus)) {
+    color: white;
+    background-color: darkcyan;
+}
+
+input[type="button"]:active, input[type="reset"]:active {
+    border-color: black;
+}
+
+#area_resultado {
+    display: block;
+    width: 100%;
+    max-width: 47ch;
+    min-width: 30ch;
+    margin-inline: auto;
+}
+
+footer {
+    padding: 1px;
+    background-image: linear-gradient(to top, gray, 30%, lightgray);
+}
+
+footer > * {
+    width: max-content;
+    margin-inline: auto;
+}
+
+footer, footer * {
+    font-family: serif;
+}
+
+:link {
+    color: royalblue;
+}
+
+:visited {
+    color: indigo;
+}
