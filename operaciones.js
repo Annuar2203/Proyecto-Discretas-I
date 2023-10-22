@@ -20,8 +20,24 @@ function pasitos(n,k){
     return texto;
 }
 
+function pasitoExponencial(n,k){
+    var resultado = 1;
+    var proceso = "";
+    var texto = "";
+    for (var i = 1;i <= k;i++ ){
+        resultado *= n;
+        proceso += n;
+        if (i < k) {
+            proceso += " * ";
+        }
+    }
+    texto = proceso + " = " + resultado;
+    return texto;
+}
 
-function permutacionNormal(){
+
+
+function variacion(){
     // n!/(n-k)!
     var n = parseInt(document.getElementById("n").value);
     var k = parseInt(document.getElementById("k").value);
@@ -53,6 +69,38 @@ function permutacionNormal(){
         }
     }
 }
+
+function permutacion(){
+    var n = parseInt(document.getElementById("n").value);
+    var area_result = document.getElementById("area_resultado");
+    var explicacion = "";
+    var numerador;
+    var resultado;
+    var proceso_n;
+    if(!n ||  isNaN(n) || !Number.isInteger(parseFloat(n))){
+        alert("Por favor, intente de nuevo con datos validos");
+    }
+    else{
+        if(n < 0){
+            alert("Asegurese que el numero es mayor o igual a 0");
+        }
+        else{
+            resultado = factorial(n);
+            proceso_n = pasitos(n);
+            explicacion = "Formula a utilizar: \nn! \n \nReemplazando datos:";
+            explicacion = explicacion + "\n" + n + "!" + " = " + resultado;
+            explicacion = explicacion +"\n\nDebido a que: \n" + proceso_n;
+            area_result.value = explicacion;
+            console.log(explicacion);
+        }
+    }
+}
+
+
+
+
+
+
 
 function combinatorio(){
     // n!/(n-k)*k!
@@ -209,6 +257,32 @@ function combinacionRepetidos(){
             explicacion = "Formula a utilizar: \n(n+k-1)! / ((n-k)! * k!) \n \nReemplazando datos:";
             explicacion = explicacion + "\n" + "("+ n + " + " + k + " - 1)" + "! / (" + n + " - " + k + ")! * " + k + "!  = " + resultado + "\n" + numerador + " / " + " " + denominador + " * " + denominador2 + " = " + resultado;
             explicacion = explicacion + "\n\nDebido a que: \n" + proceso_n + "\n" + proceso_n_k + "\n" + proceso_k;
+            area_result.value = explicacion;
+            console.log(explicacion);
+        }
+    }
+}
+
+function variacionRepetidos(){
+    var n = parseInt(document.getElementById("n").value);
+    var k = parseInt(document.getElementById("k").value);
+    var area_result = document.getElementById("area_resultado");
+    var explicacion = "";
+    var resultado;
+    var proceso;
+    if(!n || !k || isNaN(n) || isNaN(k) || !Number.isInteger(parseFloat(n)) || !Number.isInteger(parseFloat(k))){
+        alert("Por favor, intente de nuevo con datos validos");
+    }
+    else{
+        if(n < 0 || k < 0 || ((n-k) < 0)){
+            alert("Asegurese que los numeros sean mayores a 0 y que n sea mayor a k")
+        }
+        else{
+            resultado = n ** k;
+            proceso = pasitoExponencial(n,k);
+            explicacion = "Formula a utilizar: \nn ** k \n \nReemplazando datos:";
+            explicacion = explicacion + "\n" + n + " ** " + k + " = " + resultado;
+            explicacion = explicacion + "\n\nDebido a que: \n" + proceso;
             area_result.value = explicacion;
             console.log(explicacion);
         }
