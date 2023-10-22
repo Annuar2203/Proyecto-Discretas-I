@@ -3,27 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Permutaciones Circulares</title>
-    <link rel="stylesheet" href="estilo.css">
+    <title>Combinaciones</title>
+    <link rel="stylesheet" href="../estilo.css">
 </head>
 <body>
     <header>
         <nav class="encabezado">
-            <a href="menu.html">Inicio</a>
+            <a href="../menu.html">Inicio</a>
             <a href="variaciones.html">Variaciones</a>
-            <a href="combinaciones.html">Combinaciones</a>
             <a href="permutaciones_repetidos.html">Permutaciones con elementos repetidos</a>
+            <a href="permutaciones_circulares.html">Permutaciones Circulares</a>
             <a href="combinacion_repeticion.html">Combinaciones con Repeticion</a>
         </nav>
     </header>
     <section class="contenedor-operacion">
-        <h3>Permutaciones Circulares</h3>
+        <h3>Combinaciones</h3>
         <form>
             <p>
-                Introduce una cantidad para n:
+                Introduce el valor de n:
                 <input type="text" id="n">
             </p>
-            <input type="button" id="boton-calcular" value="Calcular" onclick="permutacionCircular()">
+            <p>
+                Introduce el valor de k:
+                <input type="text" id="k">
+            </p>
+            <input type="button" id="boton-calcular" value="Calcular" onclick="combinatorio()">
             <input type="reset" value="Limpiar Campos"> 
             <br>
             <output>

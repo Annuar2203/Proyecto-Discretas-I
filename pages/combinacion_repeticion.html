@@ -3,21 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Variaciones y permutaciones</title>
-    <link rel="stylesheet" href="estilo.css">
+    <title>Combinaciones</title>
+    <link rel="stylesheet" href="../estilo.css">
 </head>
 <body>
     <header>
         <nav class="encabezado">
-            <a href="menu.html">Inicio</a>
-            <a href="combinaciones.html">Combinaciones</a>
+            <a href="../menu.html">Inicio</a>
+            <a href="combinaciones.html"></a>
+            <a href="variaciones.html">Variaciones</a>
             <a href="permutaciones_repetidos.html">Permutaciones con elementos repetidos</a>
             <a href="permutaciones_circulares.html">Permutaciones Circulares</a>
-            <a href="combinacion_repeticion.html">Combinaciones con Repeticion</a>
         </nav>
     </header>
     <section class="contenedor-operacion">
-        <h3>Variaciones y permutaciones</h3>
+        <h3>Combinaciones</h3>
         <form>
             <p>
                 Introduce el valor de n:
@@ -27,8 +27,8 @@
                 Introduce el valor de k:
                 <input type="text" id="k">
             </p>
-            <input type="button" id="boton-calcular" value="Calcular" onclick="permutacionNormal()">
-            <input type="reset" value="Limpiar Campos">
+            <input type="button" id="boton-calcular" value="Calcular" onclick="combinatorio()">
+            <input type="reset" value="Limpiar Campos"> 
             <br>
             <output>
                 <textarea id="area_resultado" cols="40" rows="20" readonly></textarea>
@@ -40,11 +40,11 @@
             <strong>Asignatura: Estructuras Discretas I</strong> <br>
             Integrantes:
         </p>
-        <ul>
-            <li>Annuar Abouharb: 30.350.953</li>
-            <li>Jean Odriozola: 29.569.900</li>
-            <li>Santiago Pinto: 30.889.670</li>
-        </ul>
+            <ul>
+                <li>Annuar Abouharb: 30.350.953</li>
+                <li>Jean Odriozola: 29.569.900</li>
+                <li>Santiago Pinto: 30.889.670</li>
+            </ul>
     </footer>
     <script src="operaciones.js"></script>
 </body>
