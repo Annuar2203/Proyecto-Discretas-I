@@ -8,7 +8,7 @@ function factorial(n){
 }
 
 
-function pasitos(n){
+function pasitos(n,k){
     var texto = n + " = ";
     var resultado = 1;
     var texto = n + "! = ";
@@ -56,8 +56,8 @@ function permutacionNormal(){
 
 function combinatorio(){
     // n!/(n-k)*k!
-    var n = document.getElementById("n").value;
-    var k = document.getElementById("k").value;
+    var n = parseInt(document.getElementById("n").value);
+    var k = parseInt(document.getElementById("k").value);
     var area_result = document.getElementById("area_resultado");
     var explicacion = "";
     var numerador;
@@ -151,8 +151,7 @@ function permutacionRepetida(){
 }
 
 function permutacionCircular(){
-
-    var n = document.getElementById("n").value;
+    var n = parseInt(document.getElementById("n").value);
 
     if(isNaN(n) || !Number.isInteger(parseFloat(n))){
         alert("Por favor, intente de nuevo con datos validos");
@@ -173,4 +172,45 @@ function permutacionCircular(){
         }
 
     }
-}    
+}
+
+
+function combinacionRepetidos(){
+    //(n+k-1)! / (n-1)! * k!
+    var n = parseInt(document.getElementById("n").value);
+    var k = parseInt(document.getElementById("k").value);
+    var area_result = document.getElementById("area_resultado");
+    var explicacion = "";
+    var numerador;
+    var denominador;
+    var denominador2;
+    var resultado;
+    var proceso_n;
+    var proceso_n_k;
+    var proceso_k;
+    var temp;
+    if(!n || !k || isNaN(n) || isNaN(k) || !Number.isInteger(parseFloat(n)) || !Number.isInteger(parseFloat(k))){
+        area_result.value = "";
+        alert("Por favor, intente de nuevo con datos validos");
+    }
+    else{
+        if (n < 0 || k < 0 || ((n-k) < 0)){
+            alert("Asegurese que los numeros sean mayores a 0 y que n sea mayor a k")
+        }
+        else{
+            temp = n + k - 1;
+            numerador = factorial(temp);
+            denominador = factorial((n-k));
+            denominador2 = factorial(k);
+            resultado = numerador/(denominador*denominador2);
+            proceso_n = pasitos(temp);
+            proceso_n_k = pasitos((n-k));
+            proceso_k = pasitos(k);
+            explicacion = "Formula a utilizar: \n(n+k-1)! / ((n-k)! * k!) \n \nReemplazando datos:";
+            explicacion = explicacion + "\n" + "("+ n + " + " + k + " - 1)" + "! / (" + n + " - " + k + ")! * " + k + "!  = " + resultado + "\n" + numerador + " / " + " " + denominador + " * " + denominador2 + " = " + resultado;
+            explicacion = explicacion + "\n\nDebido a que: \n" + proceso_n + "\n" + proceso_n_k + "\n" + proceso_k;
+            area_result.value = explicacion;
+            console.log(explicacion);
+        }
+    }
+}
